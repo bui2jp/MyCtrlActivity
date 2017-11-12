@@ -16,9 +16,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".FormEditTextActivity" />
-        <activity android:name=".FormListItemActivity" />
-        <activity android:name=".FormGridItemActivity" />
+
+        <activity android:name=".FormEditTextActivity"
+            android:theme="@style/Theme.TranslucentBackground"
+            />
+        <activity android:name=".FormListItemActivity"
+            />
+
     </application>
 
 </manifest>

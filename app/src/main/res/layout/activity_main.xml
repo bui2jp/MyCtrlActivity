@@ -12,8 +12,7 @@
         android:id="@+id/textView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Edit Text" />
-
+        android:text="Edit" />
     <Button
         android:id="@+id/btnEditText"
         android:layout_width="match_parent"
@@ -21,11 +20,13 @@
         android:onClick="onClickEditText"
         android:text="btnEditText" />
 
+
+
     <TextView
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Edit Text" />
+        android:text="" />
     <Button
         android:id="@+id/btnListItem"
         android:layout_width="match_parent"
@@ -34,11 +35,13 @@
         android:onClick="onClickList"
         />
 
+
+
     <TextView
         android:id="@+id/textView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Edit Text" />
+        android:text="" />
     <Button
         android:id="@+id/btnGridItem"
         android:layout_width="match_parent"
