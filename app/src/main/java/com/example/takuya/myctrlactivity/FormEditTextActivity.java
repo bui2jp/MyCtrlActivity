@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.InputFilter;
+import android.text.InputType;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -24,13 +26,34 @@ public class FormEditTextActivity extends AppCompatActivity {
         setContentView(R.layout.form_activity_edit_text);
 
         Intent intent = getIntent();
+        String title = intent.getStringExtra("textTitle");
         String message = intent.getStringExtra("textValue");
 
+        int maxLen = intent.getIntExtra("maxLen", 10);
+        int inputType = intent.getIntExtra("inputType", InputType.TYPE_CLASS_TEXT);
+
+
+        TextView textViewTitle = (TextView) findViewById(R.id.textViewTitle);
+        textViewTitle.setText(title);
+
         EditText textView = (EditText) findViewById(R.id.editText);
+        textView.setInputType(inputType);
         textView.setText(message);
 
-    }
+        InputFilter[] filters = new InputFilter[1];
+        filters[0] = new InputFilter.LengthFilter(maxLen);
+        textView.setFilters(filters);
 
+        /*
+        intent.putExtra("textTitle", "車両名");
+        intent.putExtra("textValue", message);
+
+        intent.putExtra("maxLen", 10);
+        intent.putExtra("inputType", InputType.TYPE_CLASS_NUMBER);
+        */
+
+
+    }
 
     public void onClickBack(View view) {
 

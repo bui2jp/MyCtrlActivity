@@ -18,7 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="onClickEditText"
-        android:text="btnEditText" />
+        android:text="Edit Text" />
 
 
 
@@ -31,7 +31,7 @@
         android:id="@+id/btnListItem"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="btnListItem"
+        android:text="List Item"
         android:onClick="onClickList"
         />
 

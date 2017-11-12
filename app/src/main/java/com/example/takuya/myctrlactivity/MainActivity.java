@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -45,13 +46,16 @@ public class MainActivity extends AppCompatActivity {
 
         if( requestCode == 2001 ){
             if( resultCode == Activity.RESULT_OK ){
+
                 // 返却されてきたintentから値を取り出す
                 String str = intent.getStringExtra( "textValue" );
 
                 int index = intent.getIntExtra("selectedIndex", -1);
 
+                str = str + ":" + index;
+
                 //画面へ設定する
-                TextView editText = (TextView) findViewById(R.id.textView1);
+                TextView editText = (TextView) findViewById(R.id.textView2);
                 editText.setText(str);
             }
         }
@@ -65,7 +69,12 @@ public class MainActivity extends AppCompatActivity {
         TextView editText = (TextView) findViewById(R.id.textView1);
         String message = editText.getText().toString();
 
+        intent.putExtra("textTitle", "車両名");
         intent.putExtra("textValue", message);
+
+        intent.putExtra("maxLen", 10);
+        intent.putExtra("inputType", InputType.TYPE_CLASS_NUMBER);
+
         //startActivity(intent);
         int requestCode = 1001;
 

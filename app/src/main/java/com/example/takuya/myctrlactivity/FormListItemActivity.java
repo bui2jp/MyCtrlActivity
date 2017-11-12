@@ -90,7 +90,9 @@ public class FormListItemActivity extends AppCompatActivity {
     public void onClickBack(View view) {
 
         //戻るボタンでは値を設定する必要はない為、特になにもしない
-//        setResult( Activity.RESULT_OK, intent );
+
+
+        //setResult( Activity.RESULT_OK, intent );
 
         finish();
     }
