@@ -19,12 +19,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        new AlertDialog.Builder(this)
-//                .setTitle("title")
-//                .setMessage("message")
-//                .setPositiveButton("OK", null)
-//                .show();
-
     }
 
     public void onActivityResult( int requestCode, int resultCode, Intent intent )

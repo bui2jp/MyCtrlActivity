@@ -9,7 +9,7 @@
     </style>
 
     <!-- 半透明背景設定 -->
-    <drawable name="transparameter">#cf000000</drawable>
+    <drawable name="transparameter">#7f000000</drawable>
 
     <style name="Theme.TranslucentBackground" parent="style/AppTheme">
         <item name="android:windowBackground">@drawable/transparameter</item>
