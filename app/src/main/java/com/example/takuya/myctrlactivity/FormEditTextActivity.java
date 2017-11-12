@@ -66,8 +66,8 @@ public class FormEditTextActivity extends AppCompatActivity {
 
 //            new AlertDialog.Builder(FormEditTextActivity.this)
             new AlertDialog.Builder(FormEditTextActivity.this)
-                    .setTitle("title")
-                    .setMessage("message")
+                    .setTitle("入力エラー")
+                    .setMessage(warningMsg)
                     .setPositiveButton("OK", null)
                     .show();
 
