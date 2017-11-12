@@ -62,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //edit text
+    //現在の値を渡して起動する
     public void onClickEditText(View view) {
         Intent intent = new Intent(this, FormEditTextActivity.class);
 
@@ -82,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
         startActivityForResult(intent,requestCode);
     }
 
-    //list
+    //listを渡して起動する　現在の値を渡す必要はない
     public void onClickList(View view) {
 
         Intent intent = new Intent(this, FormListItemActivity.class);
@@ -92,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
         String message = editText.getText().toString();
 
         ArrayList<String> carlist = new ArrayList<String>();
-        for(int i = 0; i<10; i++ ){
+        for(int i = 0; i<1; i++ ){
             carlist.add("data - " + String.valueOf(i));
         }
         carlist.add("abcdefg");
@@ -103,6 +104,7 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra("arrayStringValue",carlist);
 
         int requestCode = 2001;
+        intent.putExtra("searchText",false);
 
         //値を受け取る為にstartActivityForResultで起動する
         //startActivity(intent);

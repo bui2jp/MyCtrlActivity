@@ -46,10 +46,10 @@ public class FormListItemActivity extends AppCompatActivity {
                 //値を設定して呼び出し元に返す
                 //画面の値を設定する
                 EditText searchText = (EditText)findViewById(R.id.searchText);
-                String message = searchText.getText().toString();
+                String searchTextValue = searchText.getText().toString();
 
                 Intent intent = getIntent();
-                intent.putExtra("textValue", message);
+                intent.putExtra("textValue", searchTextValue);
                 intent.putExtra("selectedIndex",position);
 
                 setResult( Activity.RESULT_OK, intent );
@@ -65,6 +65,7 @@ public class FormListItemActivity extends AppCompatActivity {
                 arr
         );
         listView.setAdapter(adapter);
+
 
 
         EditText searchText = (EditText)findViewById(R.id.searchText);
@@ -85,14 +86,28 @@ public class FormListItemActivity extends AppCompatActivity {
                 updateAdapter();
             }
         });
+
+        //searchText
+        boolean bSearchTextVisible = intent.getBooleanExtra("searchText", true);
+        if( bSearchTextVisible ) {
+            searchText.setVisibility(View.VISIBLE);
+        }else{
+            searchText.setVisibility(View.GONE);
+        }
     }
 
     public void onClickBack(View view) {
 
-        //戻るボタンでは値を設定する必要はない為、特になにもしない
+        //戻るボタンではsearchTextを設定
+        //indexには-1を設定しておく
+        EditText searchText = (EditText)findViewById(R.id.searchText);
+        String searchTextValue = searchText.getText().toString();
 
+        Intent intent = getIntent();
+        intent.putExtra("textValue", searchTextValue);
+        intent.putExtra("selectedIndex",-1);
 
-        //setResult( Activity.RESULT_OK, intent );
+        setResult( Activity.RESULT_OK, intent );
 
         finish();
     }
